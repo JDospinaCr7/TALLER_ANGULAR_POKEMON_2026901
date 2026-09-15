@@ -113,3 +113,88 @@
   font-weight: 600;
   text-transform: capitalize;
 }
+
+/* Estilo para el menú de navegación */
+header {
+  padding: 20px;
+  background-color: #0b0f19;
+  color: #fff;
+}
+
+nav {
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  color: #00ffcc;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 15px;
+  border: 1px solid rgba(0, 255, 204, 0.4);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background: #00ffcc;
+  color: #0b0f19;
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+}
+
+.active-tab {
+  background: #00ffcc;
+  color: #0b0f19;
+}
+
+.main-header {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: #0b0f19;
+  border-bottom: 1px solid rgba(0, 255, 204, 0.2);
+}
+
+.main-header h1 {
+  color: #fff;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-buttons a {
+  color: #00ffcc;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 1px solid #00ffcc;
+  border-radius: 8px;
+  background: rgba(0, 255, 204, 0.05);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 255, 204, 0.2);
+}
+
+.nav-buttons a:hover {
+  background: #00ffcc;
+  color: #0b0f19;
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.6);
+  transform: translateY(-2px);
+}
+
+.active-tab {
+  background: #00ffcc !important;
+  color: #0b0f19 !important;
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.6) !important;
+}
+
+.oculto-header {
+  display: none !important;
+}

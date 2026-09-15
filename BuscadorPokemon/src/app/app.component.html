@@ -1,22 +1,12 @@
-<header>
-  <h1> {{titulo}}</h1>
-
-
-  <nav>
-     <a routerLink="/registro" routerlinkActivate="active-tab">
-      Registro Usuario
-     </a>
-     <a routerLink="/buscador" routerLinkActivate="active-tab">
-      Buscador Pokemon
-     </a>
+<!-- Encabezado principal que se ocultará mediante la clase condicional -->
+<header class="main-header" [class.oculto-header]="modoDetalleActivo">
+  <h1>{{ titulo }}</h1>
+  <nav class="nav-buttons">
+    <a routerLink="/registro" routerLinkActive="active-tab">Registro Usuario</a>
+    <a routerLink="/buscador" routerLinkActive="active-tab">Buscador Pokemon</a>
   </nav>
-
-  <main>
-    <router-outlet></router-outlet>
-
-  </main>
-
-
-
 </header>
 
+<main>
+  <router-outlet></router-outlet>
+</main>

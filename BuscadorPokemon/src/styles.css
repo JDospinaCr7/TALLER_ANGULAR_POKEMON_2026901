@@ -13,13 +13,171 @@
   padding: 0;
 }
 
+/* --- Forzar fondo oscuro en toda la ventana --- */
 html,
 body {
-  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #0f172a !important;
+  color: var(--text);
+  font-family: 'Rubik', system-ui, sans-serif;
 }
 
-body {
-  font-family: 'Rubik', system-ui, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+/* Asegurar que Angular ocupe todo el alto sin dejar espacios blancos */
+app-root {
+  display: block;
+  min-height: 100vh;
+  background-color: #0f172a !important;
+}
+
+/* --- Estilos de los componentes de Pokémon --- */
+.grid-pokemones {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 12px !important;
+  justify-content: center !important;
+  max-width: 560px !important;
+  margin: 0 auto !important;
+  padding: 0 10px !important;
+}
+
+.pokemon-item-card {
+  background: #1e293b !important;
+  border: 1px solid #334155 !important;
+  border-radius: 12px !important;
+  padding: 12px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  text-align: center !important;
+}
+
+.pokemon-item-card:hover {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.4) !important;
+  transform: translateY(-2px) !important;
+}
+
+.btn-poke-componente {
+  background: #ef4444 !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 8px 10px !important;
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  width: 100% !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.btn-poke-componente:hover {
+  opacity: 0.9 !important;
+}
+
+.detalle-mini-card {
+  margin-top: 10px !important;
+  padding-top: 8px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+  text-align: center !important;
+  color: #ffffff !important;
+  font-size: 0.8rem !important;
+}
+
+.detalle-mini-card img {
+  width: 60px !important;
+  height: 60px !important;
+  display: block !important;
+  margin: 0 auto 4px auto !important;
+}
+
+.detalle-mini-card h4 {
+  margin: 4px 0 !important;
+  color: #f87171 !important;
+  text-transform: capitalize !important;
+  font-size: 0.95rem !important;
+}
+
+.detalle-mini-card p {
+  margin: 2px 0 !important;
+  color: #f1f5f9 !important;
+}
+
+/* --- Efecto de expansión y zoom al hacer clic en el Pokémon --- */
+.pokemon-item-card:has(.detalle-mini-card) {
+  transform: scale(1.08) !important;
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 25px rgba(239, 68, 68, 0.6) !important;
+  background: #1e293b !important;
+  z-index: 10 !important;
+}
+
+/* Transición suave para que la tarjeta crezca con elegancia */
+.pokemon-item-card {
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Hacer la imagen del Pokémon desplegado un poco más grande y atractiva */
+.detalle-mini-card img {
+  width: 85px !important;
+  height: 85px !important;
+  transition: transform 0.3s ease !important;
+}
+
+.detalle-mini-card img:hover {
+  transform: scale(1.1);
+}
+
+/* --- Estilos para la Vista Exclusiva del Pokémon --- */
+.vista-exclusiva {
+  text-align: center;
+  padding: 10px;
+}
+
+.btn-volver {
+  background: #334155;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 20px;
+  transition: background 0.2s;
+}
+
+.btn-volver:hover {
+  background: #ef4444;
+}
+
+.pokemon-card-grande {
+  background: #1e293b;
+  border: 2px solid #ef4444;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(239, 68, 68, 0.3);
+}
+
+.pokemon-image-grande {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  margin: 0 auto 1rem auto;
+  display: block;
+}
+
+.pokemon-card-grande h3 {
+  color: #ef4444;
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+.pokemon-card-grande p {
+  color: #f1f5f9;
+  font-size: 1.1rem;
+  margin: 8px 0;
 }

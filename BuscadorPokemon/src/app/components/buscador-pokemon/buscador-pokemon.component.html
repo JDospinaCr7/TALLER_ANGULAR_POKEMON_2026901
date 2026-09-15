@@ -1,0 +1,60 @@
+<section class="buscador">
+  
+  <!-- VISTA EXCLUSIVA DEL POKÉMON SELECCIONADO -->
+  <div class="vista-exclusiva" *ngIf="pokemonSeleccionado; else vistaNormal">
+    <button class="btn-volver" (click)="volverALista()">← Volver a la lista</button>
+    
+    <h2>Vista Exclusiva</h2>
+    <div class="pokemon-card-grande">
+      <img [src]="pokemonSeleccionado.sprite" [alt]="pokemonSeleccionado.nombre" class="pokemon-image-grande" />
+      <h3>{{ pokemonSeleccionado.nombre | titlecase }}</h3>
+      <p><strong>Tipo:</strong> {{ pokemonSeleccionado.tipo }}</p>
+      <p><strong>Altura:</strong> {{ pokemonSeleccionado.altura }} m</p>
+      <p><strong>Peso:</strong> {{ pokemonSeleccionado.peso }} kg</p>
+    </div>
+  </div>
+
+  <!-- VISTA NORMAL (Buscador y los 6 componentes) -->
+  <ng-template #vistaNormal>
+    <h2>Buscador de Pokémon</h2>
+
+    <form class="search-box" (ngSubmit)="buscarPokemon()">
+      <input type="text" [(ngModel)]="pokemon" name="pokemon" placeholder="Busca un Pokémon" />
+      <button type="submit" [disabled]="isLoading">
+        {{ isLoading ? 'Buscando...' : 'Buscar' }}
+      </button>
+    </form>
+
+    <div class="resultado" *ngIf="errorMessage">
+      <p class="error">{{ errorMessage }}</p>
+    </div>
+
+    <div class="resultado" *ngIf="pokemonData">
+      <div class="pokemon-card">
+        <img
+          [src]="pokemonData.sprites.front_default || 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png'"
+          [alt]="pokemonData.name"
+          class="pokemon-image"
+        />
+        <h3>{{ pokemonData.name | titlecase }}</h3>
+        <p><strong>Tipo:</strong> {{ tiposPokemon }}</p>
+        <p><strong>Habilidades:</strong> {{ habilidadesPokemon }}</p>
+        <p><strong>Altura:</strong> {{ pokemonData.height / 10 }} m</p>
+        <p><strong>Peso:</strong> {{ pokemonData.weight / 10 }} kg</p>
+      </div>
+    </div>
+
+    <div class="seccion-componentes-pokemon">
+      <h3>Selecciona un Pokémon de la lista:</h3>
+      <div class="grid-pokemones">
+        <app-bulbasaur (clickEnPokemon)="verDetalleExclusivo($event)"></app-bulbasaur>
+        <app-greninja (clickEnPokemon)="verDetalleExclusivo($event)"></app-greninja>
+        <app-lucario (clickEnPokemon)="verDetalleExclusivo($event)"></app-lucario>
+        <app-lugia (clickEnPokemon)="verDetalleExclusivo($event)"></app-lugia>
+        <app-mewtwo (clickEnPokemon)="verDetalleExclusivo($event)"></app-mewtwo>
+        <app-rayquaza (clickEnPokemon)="verDetalleExclusivo($event)"></app-rayquaza>
+      </div>
+    </div>
+  </ng-template>
+
+</section>

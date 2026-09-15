@@ -1,1 +1,13 @@
-<p>bulbasaur works!</p>
+<div class="pokemon-item-card">
+  <button (click)="cargarDatos()" class="btn-poke-componente">
+    {{ isLoading ? 'Cargando...' : nombrePokemon | titlecase }}
+  </button>
+
+  <div class="detalle-mini-card" *ngIf="pokemonData">
+    <img [src]="pokemonData.sprites.front_default" [alt]="pokemonData.name" />
+    <h4>{{ pokemonData.name | titlecase }}</h4>
+    <p><strong>Tipo:</strong> {{ tiposPokemon }}</p>
+    <p><strong>Altura:</strong> {{ pokemonData.height / 10 }} m</p>
+    <p><strong>Peso:</strong> {{ pokemonData.weight / 10 }} kg</p>
+  </div>
+</div>

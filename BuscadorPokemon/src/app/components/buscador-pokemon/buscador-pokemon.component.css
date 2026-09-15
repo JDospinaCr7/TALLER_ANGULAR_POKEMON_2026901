@@ -1,0 +1,167 @@
+.buscador {
+  max-width: 620px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #111827;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.buscador h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.search-box {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #374151;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+.search-box button {
+  padding: 0.8rem 1.1rem;
+  border: none;
+  border-radius: 10px;
+  background: #22c55e;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.search-box button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.resultado {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.error {
+  color: #fca5a5;
+}
+
+.pokemon-card {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-align: left;
+  color: #fff;
+}
+
+.pokemon-card h3 {
+  text-transform: capitalize;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  color: #00ffcc;
+}
+
+.pokemon-image {
+  display: block;
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  margin: 0 auto 1rem;
+}
+
+/* Contenedor general de los componentes */
+.seccion-componentes-pokemon {
+  margin-top: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.seccion-componentes-pokemon h3 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+/* Cuadrícula organizada para los 6 componentes (3 columnas fijas ordenadas) */
+.grid-pokemones {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(130px, 1fr));
+  gap: 15px;
+  justify-content: center;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+@media (max-width: 600px) {
+  .grid-pokemones {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Estilo unificado para cada tarjeta de componente */
+.pokemon-item-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 204, 0.3);
+  border-radius: 10px;
+  padding: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.1);
+}
+
+.pokemon-item-card:hover {
+  border-color: #00ffcc;
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+  transform: translateY(-3px);
+}
+
+/* Botón estilizado */
+.btn-poke-componente {
+  background: linear-gradient(135deg, #00ffcc, #00bfff);
+  color: #0b0f19;
+  border: none;
+  padding: 10px 12px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  transition: opacity 0.2s;
+}
+
+.btn-poke-componente:hover {
+  opacity: 0.9;
+}
+
+/* Estilo para cuando despliega la info del pokémon al hacer clic */
+.detalle-mini-card {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: #fff;
+  font-size: 0.85rem;
+}
+
+.detalle-mini-card img {
+  width: 65px;
+  height: 65px;
+  display: block;
+  margin: 0 auto;
+}
+
+.detalle-mini-card h4 {
+  margin: 5px 0;
+  color: #00ffcc;
+}
+
+.detalle-mini-card p {
+  margin: 3px 0;
+  color: #ccc;
+}

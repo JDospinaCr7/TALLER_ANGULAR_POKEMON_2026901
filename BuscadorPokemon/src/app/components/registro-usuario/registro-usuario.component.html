@@ -1,0 +1,101 @@
+<div class="form-container">
+    <header class="form-header">
+        <h2>Registro de Usuario - Estándar DIAN</h2>
+    </header>
+
+    <form (ngSubmit)="registrarUsuario()">
+        
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" [(ngModel)]="nombre" name="nombre" required>
+        </div>
+
+        <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" [(ngModel)]="apellido" name="apellido" required>
+        </div>
+
+        <div class="form-group">
+            <label for="tipo_documento">Tipo de Documento:</label>
+            <select id="tipo_documento" [(ngModel)]="tipoDocumento" name="tipo_documento" required>
+                <option value="" disabled selected>Seleccione...</option>
+                <option value="13">Cédula de Ciudadanía</option>
+                <option value="11">Registro Civil</option>
+                <option value="12">Tarjeta de Identidad</option>
+                <option value="22">Cédula de Extranjería</option>
+                <option value="41">Pasaporte</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="dni">DNI / Número de Documento:</label>
+            <input type="number" id="dni" [(ngModel)]="dni" name="dni" required>
+        </div>
+
+        <div class="form-group">
+            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha_nacimiento" [(ngModel)]="fechaNacimiento" name="fecha_nacimiento" required>
+        </div>
+
+        <div class="form-group">
+            <label for="telefono">Número de Teléfono:</label>
+            <input type="tel" id="telefono" [(ngModel)]="telefono" name="telefono" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" [(ngModel)]="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="pais">País Domicilio (Código DIAN):</label>
+            <select id="pais" [(ngModel)]="pais" name="pais" required>
+                <option value="169">Colombia (169)</option>
+                <option value="032">Argentina (032)</option>
+                <option value="076">Brasil (076)</option>
+                <option value="218">Ecuador (218)</option>
+                <option value="591">Panamá (591)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="ciudad">Ciudad Domicilio (Código DIAN):</label>
+            <select id="ciudad" [(ngModel)]="ciudad" name="ciudad" required>
+                <option value="" disabled selected>Seleccione una ciudad...</option>
+                <optgroup label="Colombia">
+                    <option value="11001">Bogotá, D.C.</option>
+                    <option value="05001">Medellín</option>
+                    <option value="76001">Cali</option>
+                </optgroup>
+                <optgroup label="Argentina">
+                    <option value="CABA">Buenos Aires</option>
+                    <option value="CDB">Córdoba</option>
+                    <option value="ROS">Rosario</option>
+                </optgroup>
+                <optgroup label="Brasil">
+                    <option value="SAO">São Paulo</option>
+                    <option value="RIO">Río de Janeiro</option>
+                    <option value="BSB">Brasilia</option>
+                </optgroup>
+                <optgroup label="Ecuador">
+                    <option value="UIO">Quito</option>
+                    <option value="GYE">Guayaquil</option>
+                    <option value="CUE">Cuenca</option>
+                </optgroup>
+                <optgroup label="Panamá">
+                    <option value="PTY">Ciudad de Panamá</option>
+                    <option value="COL">Colón</option>
+                    <option value="DAV">David</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="form-group checkbox-group">
+            <input type="checkbox" id="tratamiento_datos" [(ngModel)]="aceptaTratamiento" name="tratamiento_datos" required>
+            <label for="tratamiento_datos">Acepto el tratamiento de datos personales</label>
+        </div>
+
+        <button type="submit" id="btn-enviar" class="submit-btn">Enviar Datos</button>
+
+    </form>
+</div>
