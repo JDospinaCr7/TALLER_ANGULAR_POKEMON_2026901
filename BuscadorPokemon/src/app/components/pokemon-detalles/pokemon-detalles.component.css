@@ -1,0 +1,80 @@
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #ffffff;
+    min-height: 80vh;
+}
+
+/* Tarjeta contenedora de detalles */
+div > div {
+    background: #111827;
+    border: 2px solid #38bdf8;
+    border-radius: 14px;
+    padding: 30px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    color: #38bdf8;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+img {
+    width: 170px;
+    height: 170px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.5));
+}
+
+h3 {
+    margin: 15px 0 10px 0;
+    color: #f3f4f6;
+    font-size: 1.2rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+li {
+    background: #1f2937;
+    padding: 8px 14px;
+    margin-bottom: 6px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    text-transform: capitalize;
+    border-left: 4px solid #38bdf8;
+}
+
+a {
+    background: #38bdf8;
+    color: #0f172a;
+    padding: 10px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+a:hover {
+    background: #0284c7;
+    color: #ffffff;
+    box-shadow: 0 0 12px #38bdf8;
+}

@@ -1,0 +1,17 @@
+<div>
+  @if (pokemonData) {
+    <div>
+      <h1>{{ pokemonData.name }}</h1>
+      <img [src]="pokemonData.sprites.other['official-artwork'].front_default" [alt]="pokemonData.name" />
+      <h3>Estadística base</h3>
+      <ul>
+        @for (stat of pokemonData.stats; track stat.stat.name) {
+          <li><strong>{{ stat.stat.name }}:</strong> {{ stat.base_stat }}</li>
+        }
+      </ul>
+      <a routerLink="/pokemon-lista">Volver a la lista</a>
+    </div>
+  } @else {
+    <h2>¡El Pokémon no fue encontrado!</h2>
+  }
+</div>

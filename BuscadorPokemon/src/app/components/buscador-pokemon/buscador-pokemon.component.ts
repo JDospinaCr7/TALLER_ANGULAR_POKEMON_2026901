@@ -3,12 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
-import { BulbasaurComponent } from '../bulbasaur/bulbasaur.component';
-import { GreninjaComponent } from '../greninja/greninja.component';
-import { LucarioComponent } from '../lucario/lucario.component';
-import { LugiaComponent } from '../lugia/lugia.component';
-import { MewtwoComponent } from '../mewtwo/mewtwo.component';
-import { RayquazaComponent } from '../rayquaza/rayquaza.component';
+import { PokemonListaComponent } from '../pokemon-lista/pokemon-lista.component';
+import { ResaltarPokemonDirective } from '../../directives/resaltar-pokemon';
 
 @Component({
   selector: 'app-buscador-pokemon',
@@ -17,12 +13,8 @@ import { RayquazaComponent } from '../rayquaza/rayquaza.component';
     CommonModule,
     FormsModule,
     HttpClientModule,
-    BulbasaurComponent,
-    GreninjaComponent,
-    LucarioComponent,
-    LugiaComponent,
-    MewtwoComponent,
-    RayquazaComponent
+    PokemonListaComponent,
+    ResaltarPokemonDirective
   ],
   templateUrl: './buscador-pokemon.component.html',
   styleUrls: ['./buscador-pokemon.component.css']

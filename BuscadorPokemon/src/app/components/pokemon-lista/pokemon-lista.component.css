@@ -1,0 +1,36 @@
+div {
+    text-align: center;
+    margin-top: 15px;
+}
+
+h3 {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.grid-pokemones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.grid-pokemones a {
+    background: #1e293b;
+    color: #38bdf8;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid #38bdf8;
+    transition: all 0.3s ease;
+}
+
+.grid-pokemones a:hover {
+    background: #38bdf8;
+    color: #0f172a;
+    box-shadow: 0 0 12px #38bdf8;
+}
